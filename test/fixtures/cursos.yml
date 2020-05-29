@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome_curso: MyString
+  categoria: MyString
+  data_conclusao: 2020-05-15
+  instituicao: MyString
+
+two:
+  nome_curso: MyString
+  categoria: MyString
+  data_conclusao: 2020-05-15
+  instituicao: MyString

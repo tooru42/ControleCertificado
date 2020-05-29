@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<div class="background_content" style="margin-top: 7rem">
+  <p>
+    <strong>Nome curso:</strong>
+    <%= @curso.nome_curso %>
+  </p>
+
+  <p>
+    <strong>Categoria:</strong>
+    <%= @curso.categoria %>
+  </p>
+
+  <p>
+    <strong>Data conclusao:</strong>
+    <%= @curso.data_conclusao %>
+  </p>
+
+  <p>
+    <strong>Instituicao:</strong>
+    <%= @curso.instituicao %>
+  </p>
+
+  <p>
+    <strong>Certificado:</strong>
+    <%= @curso.certificado %>
+  </p>
+
+<%= link_to "Visualizar", asset_path("certificados/#{@curso.certificado}", skip_pipeline: true), class: "btn btn-success btn-inverse" %>
+

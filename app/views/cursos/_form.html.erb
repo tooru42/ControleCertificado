@@ -1,0 +1,77 @@
+<%= form_with(model: curso, local: true, :multipart => true) do |form| %>
+  <% if curso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
+
+      <ul>
+      <% curso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="background_content">
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+            <div class="form-group">
+              <div class="field">
+                <%= form.label :nome_curso %>
+                <%= form.text_field :nome_curso, class:"form-control" %>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8">
+            <div class="form-group">
+              <div class="field">
+                <%= form.label :categoria %>
+                <%= form.text_field :categoria, class:"form-control" %>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8">
+            <div class="form-group">
+              <div class="field">
+                <%= form.label :data_conclusao %>
+                <%= form.date_select :data_conclusao, class:"form-control" %>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8">
+            <div class="form-group">
+              <div class="field">
+                <%= form.label :instituicao %>
+                <%= form.text_field :instituicao, class:"form-control" %>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8">
+            <div class="form-group">
+              <div class="field">
+                <%= csrf_meta_tags %>
+                <%= form.label :certificado %>
+                <%= file_field_tag 'certificado' %>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    <div class="actions">
+      <%= form.submit "Salvar Curso", class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>
+<% end %>

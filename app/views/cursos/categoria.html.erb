@@ -1,0 +1,22 @@
+<h1 class="alert alert-warning">Categorias</h1>
+
+<p id="notice"><%= notice %></p>
+
+<div class="background_content">
+  <table class="table table-hover table-striped">
+    <thead class="bg-warning">
+      <tr>
+        <th>Categoria</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categorias.each do |categoria| %>
+        <tr>
+          <td><%= categoria.categoria %></td>
+          <td><%= link_to 'Visualizar', cursos_categoria_path(categoria.categoria), class:"btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
