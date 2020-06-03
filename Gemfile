@@ -10,6 +10,10 @@ gem 'jquery-rails', '~> 4.4'
 gem 'rails-i18n'
 #bootstrap
 gem 'twitter-bootstrap-rails'
+#pace (loading bar)
+gem 'pace-rails'
+#datatable
+gem 'jquery-datatables'
 ##### adicionados manualmente #####
 
 

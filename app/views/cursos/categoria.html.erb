@@ -1,9 +1,13 @@
+<% content_for(:head) do %>
+  <%= javascript_include_tag 'tables.js' %>
+<% end %>
+
 <h1 class="alert alert-warning">Categorias</h1>
 
 <p id="notice"><%= notice %></p>
 
 <div class="background_content">
-  <table class="table table-hover table-striped">
+  <table class="table table-hover table-striped" id="tabelas">
     <thead class="bg-warning">
       <tr>
         <th>Categoria</th>

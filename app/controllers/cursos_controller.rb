@@ -49,7 +49,9 @@ class CursosController < ApplicationController
       upload_arquivo()
     end
     @curso = Curso.find(params[:id])
-    @curso.certificado = params[:certificado].original_filename
+    unless params[:certificado].nil?
+      @curso.certificado = params[:certificado].original_filename
+    end
 
     respond_to do |format|
       if @curso.update(curso_params)
@@ -73,12 +75,12 @@ class CursosController < ApplicationController
   end
 
   def categorias
-    @categorias = Curso.select('distinct(categoria)')
+    @categorias = Curso.select('distinct(categoria)').order("categoria")
     render :categoria
   end
 
   def visualizar_todos_cursos
-    @cursos = Curso.all
+    @cursos = Curso.all.order("nome_curso")
     render :visualizar_todos_cursos
   end
 
@@ -104,10 +106,10 @@ class CursosController < ApplicationController
       path = File.join(Rails.root, 
         "public/certificados", 
         params[:certificado].original_filename)
-
-      # escreve o arquivo no local designado
-      File.open(path, "wb") do |f| 
-        f.write(params[:certificado].read)
-      end
+  
+        # escreve o arquivo no local designado
+        File.open(path, "wb") do |f| 
+          f.write(params[:certificado].read)
+        end
     end
 end
